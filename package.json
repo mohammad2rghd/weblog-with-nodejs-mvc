@@ -1,0 +1,18 @@
+{
+  "name": "weblog-with-node",
+  "version": "1.0.0",
+  "description": "a project with node to master node.js",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "dev": "nodemon app"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "mongoose": "^8.0.4"
+  }
+}
