@@ -1,5 +1,6 @@
 //* these are installed modules
 const express = require("express");
+const morgan = require("morgan");
 
 //* load config
 const dotEnv = require("dotenv");
@@ -11,6 +12,11 @@ dotEnv.config({
 const app = express();
 const path = require("path");
 const indexRoutes = require("./routes");
+
+//* logging
+if (process.env.NODE_ENV === "development") {
+  app.use(morgan("dev"));
+}
 
 //* view engine registeration
 app.set("view engine", "ejs");
