@@ -1,5 +1,12 @@
 //* these are installed modules
 const express = require("express");
+
+//* load config
+const dotEnv = require("dotenv");
+dotEnv.config({
+  path: "./config/config.env",
+});
+
 //* these are our modules
 const app = express();
 const path = require("path");
@@ -17,6 +24,10 @@ app.use(express.static(path.join(__dirname, "public")));
 //* routes
 app.use(indexRoutes);
 
-app.listen(3000, () => {
-  console.log(`server is running on port ${3000}`);
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(
+    `server is running in ${process.env.NODE_ENV} mode on port ${PORT}`
+  );
 });
