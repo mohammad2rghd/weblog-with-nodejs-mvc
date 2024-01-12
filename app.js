@@ -8,6 +8,10 @@ dotEnv.config({
   path: "./config/config.env",
 });
 
+//* connection to dataBase
+const connectDB = require("./config/db");
+connectDB();
+
 //* these are our modules
 const app = express();
 const path = require("path");
